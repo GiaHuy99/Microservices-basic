@@ -14,14 +14,8 @@ The Employee Service calls the Department Service via REST to enrich data
 
 ## Project Structure (Multi-Module Maven)
 
-microservices-basic/
-├── pom.xml                  # Parent POM (inherits Spring Boot 4.0.0)
-├── department-service/
-│   ├── pom.xml
-│   └── src/main/...
-└── employee-service/
-├── pom.xml
-└── src/main/...
+![Screenshot 2025-12-18 at 22 43 54](https://github.com/user-attachments/assets/446e3d73-93ea-454d-ab72-a3a088c515d5)
+
 
 - Java 21 (or higher)
 - Maven 3.8+
