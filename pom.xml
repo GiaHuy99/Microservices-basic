@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Inherit from official Spring Boot parent for all its benefits -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.0</version>
+        <relativePath/> <!-- Lookup parent from repository -->
+    </parent>
+
+    <!-- Your custom info for the whole project -->
+    <groupId>huypro</groupId>
+    <artifactId>microservices-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>  <!-- Important: pom for parent -->
+
+    <name>Microservices Project Parent</name>
+    <description>Parent POM for Department and Employee microservices</description>
+
+    <properties>
+        <java.version>21</java.version>  <!-- Spring Boot 4.0 supports up to Java 25, but 21 is safe baseline -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+
+    <!-- List all your microservices as modules -->
+    <modules>
+        <module>department-service</module>
+        <module>employee-service</module>
+        <!-- Add more here later, e.g., <module>gateway-service</module> -->
+    </modules>
+
+    <!-- Optional: Common plugins inherited by children -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
